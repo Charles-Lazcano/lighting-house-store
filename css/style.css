@@ -623,6 +623,43 @@ p { margin: 0 0 1rem; }
 .footer-bottom { text-align: center; padding: 22px 0; font-size: 0.85rem; color: #8FA1BB; }
 
 /* =========================================================
+   SCROLL REVEAL ANIMATIONS
+   Progressive enhancement: elements are fully visible by
+   default. Motion is added only when the visitor hasn't
+   requested reduced motion, and JS toggles .is-visible via
+   IntersectionObserver as each element enters the viewport.
+========================================================= */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal,
+  .reveal-pop,
+  .reveal-left,
+  .reveal-right {
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .reveal { transform: translateY(30px); }
+  .reveal-pop { transform: translateY(24px) scale(0.92); }
+  .reveal-left { transform: translateX(-40px); }
+  .reveal-right { transform: translateX(40px); }
+
+  .reveal.is-visible,
+  .reveal-pop.is-visible,
+  .reveal-left.is-visible,
+  .reveal-right.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  /* Stagger the header trio (eyebrow / title / lead) in each section */
+  .text-center .eyebrow.reveal { transition-delay: 0s; }
+  .text-center .section-title.reveal { transition-delay: 0.12s; }
+  .text-center .section-lead.reveal { transition-delay: 0.24s; }
+}
+
+/* =========================================================
    MOBILE CALL FAB
 ========================================================= */
 .mobile-call-fab {
