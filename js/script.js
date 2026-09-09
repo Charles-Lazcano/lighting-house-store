@@ -47,6 +47,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---------- Interactive hero bulb & wall switch ---------- */
+  var lbStage = document.getElementById('lbStage');
+  var lbBulb = document.getElementById('lbBulb');
+  var lbSwitch = document.getElementById('lbSwitch');
+  var lbRays = document.getElementById('lbRays');
+
+  if (lbStage && lbBulb && lbSwitch && lbRays) {
+    var LB_RAY_COUNT = 12;
+    for (var i = 0; i < LB_RAY_COUNT; i++) {
+      var ray = document.createElement('span');
+      var angle = (360 / LB_RAY_COUNT) * i;
+      ray.style.transform = 'translate(-50%,-100%) rotate(' + angle + 'deg)';
+      lbRays.appendChild(ray);
+    }
+
+    var toggleLightbulb = function () {
+      var isOn = lbStage.classList.toggle('on');
+      lbBulb.setAttribute('aria-pressed', isOn);
+      lbSwitch.setAttribute('aria-pressed', isOn);
+    };
+
+    [lbBulb, lbSwitch].forEach(function (el) {
+      el.addEventListener('click', toggleLightbulb);
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleLightbulb();
+        }
+      });
+    });
+  }
+
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

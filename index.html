@@ -62,6 +62,48 @@
 <section class="hero" id="hero">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
+
+    <!-- Interactive LED bulb + wall switch — tap the bulb or flip the switch -->
+    <div class="hero-bulb-widget" role="group" aria-label="Interactive LED bulb and wall switch demo">
+      <div class="lb-stage on" id="lbStage">
+
+        <div class="lb-bulb-wrap" id="lbBulb" role="button" tabindex="0" aria-label="Toggle light" aria-pressed="true">
+          <div class="lb-halo"></div>
+          <div class="lb-rays" id="lbRays"></div>
+          <svg class="lb-bulb-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <radialGradient id="lbLitGlass" cx="50%" cy="40%" r="62%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="42%" stop-color="#FFF3C9"/>
+                <stop offset="100%" stop-color="#FFC85E"/>
+              </radialGradient>
+            </defs>
+            <path class="lb-glass" d="M60 8 C30 8 14 30 14 54 c0 20 12 32 20 44 c5 8 6 14 6 20 h40 c0-6 1-12 6-20 c8-12 20-24 20-44 C106 30 90 8 60 8 Z"/>
+            <path class="lb-filament" d="M44 118 C44 96 50 92 54 78 C56 70 52 62 60 62 C68 62 64 70 66 78 C70 92 76 96 76 118"/>
+            <g>
+              <rect class="lb-cap" x="40" y="120" width="40" height="12" rx="3"/>
+              <line class="lb-cap-line" x1="42" y1="126" x2="78" y2="126"/>
+              <rect class="lb-cap" x="43" y="132" width="34" height="11" rx="2"/>
+              <line class="lb-cap-line" x1="45" y1="137.5" x2="75" y2="137.5"/>
+              <rect class="lb-cap" x="46" y="143" width="28" height="10" rx="2"/>
+              <path class="lb-cap" d="M50 153 h20 l-4 10 h-12 z"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="lb-wall-switch" id="lbSwitch" role="button" tabindex="0" aria-label="Flip light switch" aria-pressed="true">
+          <span class="lb-screw-slot lb-top"></span>
+          <span class="lb-screw-slot lb-bot"></span>
+          <div class="lb-rocker-housing">
+            <span class="lb-txt lb-on-label">ON</span>
+            <div class="lb-lever"></div>
+            <span class="lb-txt lb-off-label">OFF</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <h1 class="hero-title">TRANSFORM YOUR SPACE WITH <span class="accent-text">PREMIUM LED LIGHTING</span></h1>
     <p class="hero-subtitle">Save up to 80% on energy costs with professional LED sales, service &amp; installation across San Antonio.</p>
 

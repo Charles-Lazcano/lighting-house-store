@@ -18,6 +18,8 @@
   --shadow-sm: 0 2px 8px rgba(12, 45, 87, 0.08);
   --shadow-md: 0 8px 24px rgba(12, 45, 87, 0.14);
   --radius: 14px;
+  --light-warm: #FFD98A;
+  --glass-off: #33456b;
 }
 
 * { box-sizing: border-box; }
@@ -283,6 +285,109 @@ p { margin: 0 0 1rem; }
 }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; }
 
+/* =========================================================
+   HERO — INTERACTIVE LED BULB & WALL SWITCH WIDGET
+   Ported from a standalone demo. The whole widget is scaled
+   down with `transform: scale()` rather than hand-resized,
+   so the halo/rays/lever geometry stays pixel-perfect
+   relative to itself; the wrapper height below is the
+   original unscaled stage height (~614px) times that scale.
+========================================================= */
+.hero-bulb-widget {
+  display: flex;
+  justify-content: center;
+  height: 258px;
+  margin: 0 auto 32px;
+  position: relative;
+  z-index: 2;
+}
+.lb-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.6rem;
+  padding: 2rem;
+  transform: scale(0.42);
+  transform-origin: top center;
+}
+
+.lb-bulb-wrap { position: relative; width: 240px; height: 330px; cursor: pointer; display: grid; place-items: center; -webkit-tap-highlight-color: transparent; }
+.lb-halo {
+  position: absolute; top: -90px; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,251,235,.95) 0%, rgba(255,220,140,.55) 30%, rgba(255,210,120,0) 70%);
+  opacity: 0; transform: scale(.55); transition: opacity .5s ease, transform .5s ease; pointer-events: none; filter: blur(6px);
+}
+.lb-rays { position: absolute; top: -125px; width: 470px; height: 470px; opacity: 0; transition: opacity .6s ease .1s; pointer-events: none; }
+.lb-rays span {
+  position: absolute; left: 50%; top: 50%; width: 3px; height: 170px;
+  background: linear-gradient(to top, rgba(255,220,140,0), rgba(255,251,235,.75));
+  transform-origin: bottom center; border-radius: 3px;
+}
+.lb-bulb-svg { position: relative; width: 210px; height: auto; z-index: 2; transition: filter .45s ease; }
+.lb-glass { fill: var(--glass-off); transition: fill .45s ease; }
+.lb-filament { stroke: #5b6a86; stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: stroke .35s ease, filter .35s ease; }
+.lb-cap { fill: #c7cdd6; }
+.lb-cap-line { stroke: #8b93a3; stroke-width: 2; }
+
+.lb-stage.on .lb-bulb-svg { filter: drop-shadow(0 0 26px rgba(255,224,150,.95)) drop-shadow(0 0 60px rgba(255,205,110,.6)); }
+.lb-stage.on .lb-glass { fill: url(#lbLitGlass); animation: lb-flicker 4s ease-in-out infinite; }
+.lb-stage.on .lb-filament { stroke: #fffef5; filter: drop-shadow(0 0 8px var(--light-warm)); }
+.lb-stage.on .lb-halo { opacity: 1; transform: scale(1); animation: lb-breathe 3.4s ease-in-out infinite; }
+.lb-stage.on .lb-rays { opacity: 1; animation: lb-ray-pulse 3.4s ease-in-out infinite; }
+
+@keyframes lb-breathe { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.09); opacity: .8; } }
+@keyframes lb-ray-pulse { 0%, 100% { opacity: .9; transform: rotate(0deg); } 50% { opacity: .5; transform: rotate(6deg); } }
+@keyframes lb-flicker { 0%, 100% { opacity: 1; } 47% { opacity: 1; } 48% { opacity: .85; } 49% { opacity: 1; } 72% { opacity: .93; } 73% { opacity: 1; } }
+
+.lb-wall-switch {
+  position: relative; width: 112px; height: 178px; border-radius: 14px;
+  background: linear-gradient(160deg,#fdfdf6 0%,#ececdf 100%);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.9), inset 0 -2px 6px rgba(0,0,0,.12);
+  cursor: pointer; display: grid; place-items: center; user-select: none; -webkit-tap-highlight-color: transparent;
+}
+.lb-wall-switch::before, .lb-wall-switch::after {
+  content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+  width: 11px; height: 11px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%,#f4f4ec,#b9b9ac);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
+}
+.lb-wall-switch::before { top: 10px; }
+.lb-wall-switch::after { bottom: 10px; }
+.lb-screw-slot { position: absolute; left: 50%; transform: translateX(-50%); width: 9px; height: 1.5px; background: #9a9a8c; }
+.lb-screw-slot.lb-top { top: 14.7px; }
+.lb-screw-slot.lb-bot { bottom: 14.7px; }
+
+.lb-rocker-housing {
+  position: relative; width: 56px; height: 110px; border-radius: 9px;
+  background: linear-gradient(#2b2b2b,#161616); box-shadow: inset 0 3px 8px rgba(0,0,0,.7);
+  display: flex; align-items: center; justify-content: center; perspective: 320px;
+}
+.lb-rocker-housing .lb-txt { position: absolute; left: 0; right: 0; text-align: center; font-size: .6rem; letter-spacing: .12em; font-weight: 700; color: #5a5a5a; transition: color .3s ease; }
+.lb-rocker-housing .lb-on-label { top: 7px; }
+.lb-rocker-housing .lb-off-label { bottom: 7px; }
+
+.lb-lever {
+  position: relative; width: 42px; height: 56px; border-radius: 7px 7px 8px 8px;
+  background: linear-gradient(#fbfbf5,#d7d7cb);
+  box-shadow: 0 4px 8px rgba(0,0,0,.45), inset 0 2px 3px rgba(255,255,255,.9), inset 0 -3px 5px rgba(0,0,0,.18);
+  transform-origin: center 88%;
+  transition: transform .28s cubic-bezier(.34,1.4,.64,1), background .28s ease;
+  transform: translateY(24px) rotateX(38deg);
+}
+.lb-lever::after { content: ""; position: absolute; left: 8px; right: 8px; top: 10px; height: 2px; background: rgba(0,0,0,.08); border-radius: 2px; }
+
+.lb-stage.on .lb-lever { transform: translateY(-24px) rotateX(-38deg); background: linear-gradient(#ffffff,#eef3ea); }
+.lb-stage.on .lb-rocker-housing .lb-on-label { color: var(--green-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-stage.on .lb-halo, .lb-stage.on .lb-rays, .lb-stage.on .lb-glass { animation: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-bulb-widget { height: 185px; margin-bottom: 24px; }
+  .lb-stage { transform: scale(0.30); }
+}
 
 /* =========================================================
    PRODUCT CATEGORIES
