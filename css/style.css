@@ -853,9 +853,15 @@ p { margin: 0 0 1rem; }
 
 /* "Lights on" glow — briefly toggled via JS on contact form submit */
 @keyframes card-light-on {
-  0% { box-shadow: var(--shadow-md), 0 0 0 0 rgba(255,217,138,0); }
-  15% { box-shadow: var(--shadow-md), 0 0 40px 14px rgba(255,217,138,0.55), 0 0 90px 30px rgba(255,217,138,0.22); }
-  100% { box-shadow: var(--shadow-md), 0 0 0 0 rgba(255,217,138,0); }
+  0% {
+    box-shadow: var(--shadow-md), inset 0 0 0 0 rgba(255,196,77,0), 0 0 0 0 rgba(255,196,77,0);
+  }
+  12% {
+    box-shadow: var(--shadow-md), inset 0 0 0 3px rgba(255,196,77,0.95), 0 0 55px 16px rgba(255,196,77,0.65), 0 0 110px 40px rgba(255,196,77,0.3);
+  }
+  100% {
+    box-shadow: var(--shadow-md), inset 0 0 0 0 rgba(255,196,77,0), 0 0 0 0 rgba(255,196,77,0);
+  }
 }
 .form-lit { animation: card-light-on 3000ms ease-out; }
 @media (prefers-reduced-motion: reduce) {
