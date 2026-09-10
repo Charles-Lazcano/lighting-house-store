@@ -214,6 +214,8 @@ p { margin: 0 0 1rem; }
 }
 .icon-btn svg { width: 22px; height: 22px; }
 .icon-btn:hover { background: rgba(255,255,255,0.12); }
+.icon-btn-call { border-radius: 8px; background: var(--green-accent); }
+.icon-btn-call:hover { background: #1c8c4a; }
 
 .search-bar {
   max-height: 0;
