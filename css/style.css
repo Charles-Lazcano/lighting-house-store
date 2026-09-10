@@ -479,6 +479,9 @@ p { margin: 0 0 1rem; }
 }
 .tile-blue:hover::after { background: linear-gradient(180deg, rgba(30,111,217,0.15) 0%, rgba(12,45,87,0.75) 100%); }
 .tile-green:hover::after { background: linear-gradient(180deg, rgba(34,168,90,0.15) 0%, rgba(20,108,67,0.75) 100%); }
+.tile-photo { background-size: cover; background-position: center; }
+.tile-photo::before { display: none; }
+.tile-photo:hover::after { background: linear-gradient(180deg, rgba(30,111,217,0.10) 0%, rgba(12,45,87,0.65) 100%); }
 .tile-icon {
   position: absolute;
   top: 16px;
