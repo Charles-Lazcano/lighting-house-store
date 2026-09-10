@@ -639,7 +639,7 @@ p { margin: 0 0 1rem; }
   animation: sa-flicker 5s ease-in-out infinite;
 }
 
-.sa-lantern { bottom: 4%; left: 4%; top: auto; }
+.sa-lantern { top: 2%; left: 4%; bottom: auto; }
 .sa-sway { transform-origin: top center; animation: sa-sway 6s ease-in-out infinite; }
 
 @keyframes sa-flicker { 0%, 100% { opacity: .9; } 45% { opacity: 1; } 50% { opacity: .72; } 55% { opacity: .95; } }
