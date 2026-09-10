@@ -679,7 +679,7 @@ p { margin: 0 0 1rem; }
 }
 .map-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 
-/* ---------- Decorative side lighting: LED strips, lantern, sconce ---------- */
+/* ---------- Decorative lighting: swinging lantern, top-left ---------- */
 .sa-fixtures { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 .sa-fx { position: absolute; }
 .sa-fx svg { display: block; overflow: visible; }
@@ -693,43 +693,19 @@ p { margin: 0 0 1rem; }
 }
 
 .sa-lantern { top: 5%; left: 4%; bottom: auto; }
-.sa-sconce-r { top: 52%; right: 2%; }
 .sa-sway { transform-origin: top center; animation: sa-sway 6s ease-in-out infinite; }
-
-.sa-led {
-  position: absolute;
-  width: 8px;
-  border-radius: 6px;
-  background: repeating-linear-gradient(180deg, var(--led-white) 0 3px, rgba(234,244,255,.55) 3px 9px);
-  box-shadow: 0 0 16px 3px rgba(124,192,255,.5), 0 0 40px 8px rgba(124,192,255,.18),
-    inset 0 0 5px rgba(255,255,255,.9);
-  animation: sa-breathe 4.5s ease-in-out infinite;
-}
-.sa-led::before {
-  content: '';
-  position: absolute;
-  inset: -3px -4px;
-  border-radius: 8px;
-  background: rgba(0,0,0,.16);
-  z-index: -1;
-}
-.sa-led-l { left: 2%;  top: 34%; height: 200px; }
-.sa-led-r { right: 2%; top: 8%;  height: 170px; animation-delay: 1.2s; }
 
 @keyframes sa-flicker { 0%, 100% { opacity: .9; } 45% { opacity: 1; } 50% { opacity: .72; } 55% { opacity: .95; } }
 @keyframes sa-sway { 0%, 100% { transform: rotate(-2.2deg); } 50% { transform: rotate(2.2deg); } }
-@keyframes sa-breathe { 0%, 100% { opacity: .78; } 50% { opacity: 1; } }
 
 @media (max-width: 840px) {
   .location-card { grid-template-columns: 1fr; }
   .location-info { padding: 40px 30px; }
   .map-embed { min-height: 320px; }
-  .sa-sconce-r, .sa-led-l { display: none; }
   .sa-lantern { left: 2%; }
-  .sa-led-r { height: 120px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sa-glow, .sa-led, .sa-lantern.sa-sway { animation: none; }
+  .sa-glow, .sa-lantern.sa-sway { animation: none; }
 }
 
 /* =========================================================
