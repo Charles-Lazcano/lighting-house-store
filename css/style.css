@@ -626,7 +626,7 @@ p { margin: 0 0 1rem; }
 }
 .map-embed iframe { width: 100%; height: 320px; border: 0; display: block; }
 
-/* ---------- Decorative lighting: swinging lantern, bottom-left ---------- */
+/* ---------- Decorative lighting: swinging lantern, top-left ---------- */
 .sa-fixtures { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 .sa-fx { position: absolute; }
 .sa-fx svg { display: block; overflow: visible; }
