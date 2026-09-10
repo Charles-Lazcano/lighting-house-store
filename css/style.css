@@ -285,6 +285,16 @@ p { margin: 0 0 1rem; }
 }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; }
 
+/* Desktop only: center the hero copy. Mobile/tablet keeps the left-aligned
+   layout above, and the sticky header/top bar is untouched either way. */
+@media (min-width: 901px) {
+  .hero-content { text-align: center; }
+  .hero-title,
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-stats,
+  .hero-cta { justify-content: center; }
+}
+
 /* =========================================================
    HERO — INTERACTIVE LED BULB & WALL SWITCH WIDGET
    Ported from a standalone demo. The whole widget is scaled
