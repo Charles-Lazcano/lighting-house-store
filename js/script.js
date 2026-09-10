@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var formNote = document.getElementById('formNote');
   if (contactForm) {
     var contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
+    var contactFormCard = document.querySelector('.contact-form-wrap');
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!contactForm.checkValidity()) {
@@ -101,6 +102,15 @@ document.addEventListener('DOMContentLoaded', function () {
         contactSubmitBtn.classList.add('btn-lit');
         contactSubmitBtn.addEventListener('animationend', function () {
           contactSubmitBtn.classList.remove('btn-lit');
+        }, { once: true });
+      }
+
+      if (contactFormCard) {
+        contactFormCard.classList.remove('form-lit');
+        void contactFormCard.offsetWidth; // restart animation if submitted again quickly
+        contactFormCard.classList.add('form-lit');
+        contactFormCard.addEventListener('animationend', function () {
+          contactFormCard.classList.remove('form-lit');
         }, { once: true });
       }
 
