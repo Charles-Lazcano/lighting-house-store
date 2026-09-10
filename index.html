@@ -287,6 +287,9 @@
 ========================================================= -->
 <section class="section section-green" id="service-area">
   <div class="sa-fixtures" aria-hidden="true">
+    <div class="sa-fx sa-led sa-led-l"></div>
+    <div class="sa-fx sa-led sa-led-r"></div>
+
     <div class="sa-fx sa-lantern sa-sway">
       <svg width="54" height="120" viewBox="0 0 54 120">
         <line x1="27" y1="0" x2="27" y2="24" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
@@ -300,31 +303,56 @@
       </svg>
       <span class="sa-glow" style="width:56px;height:56px;left:-1px;top:30px"></span>
     </div>
+
+    <div class="sa-fx sa-sconce-r">
+      <svg width="70" height="90" viewBox="0 0 70 90">
+        <rect x="60" y="34" width="10" height="22" rx="3" fill="#0c3a24"/>
+        <path d="M60,45 L24,30 L24,60 Z" fill="#12513a" stroke="rgba(255,255,255,.18)"/>
+        <ellipse cx="24" cy="45" rx="6" ry="15" fill="#FFD98A"/>
+        <path d="M24,30 L0,16 M24,60 L0,74" stroke="rgba(255,217,138,.35)" stroke-width="10" stroke-linecap="round" opacity=".5"/>
+      </svg>
+      <span class="sa-glow" style="width:70px;height:70px;left:-24px;top:8px"></span>
+    </div>
   </div>
 
   <div class="container text-center">
     <p class="eyebrow eyebrow-light reveal">Service Area</p>
-    <h2 class="section-title light reveal">PROUDLY SERVING <span class="accent-text">SAN ANTONIO</span></h2>
+    <h2 class="section-title light reveal">PROUDLY SERVING <span class="accent-gold">SAN ANTONIO</span></h2>
     <p class="section-lead light reveal">Professional LED lighting sales, service, and installation throughout San Antonio and surrounding areas.</p>
   </div>
 
-  <div class="container service-area-layout">
+  <div class="container">
     <div class="location-card reveal">
-      <div class="location-pin">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-7.3 7-12.5A7 7 0 105 9.5C5 14.7 12 22 12 22z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+      <div class="location-info">
+        <div class="location-eyebrow">
+          <span class="location-pin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          Visit our showroom
+        </div>
+        <h3 class="location-name">LIGHTING HOUSE STORE &mdash; SAN ANTONIO, TX</h3>
+        <p class="location-detail location-detail-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+12107238874">(210) 723-8874</a>
+        </p>
+        <p class="location-detail location-detail-addr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>2506 West Ave., San Antonio, TX 78201</span>
+        </p>
+        <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&destination=2506+West+Ave,+San+Antonio,+TX+78201" target="_blank" rel="noopener">
+          Get Directions
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
-      <h3>LIGHTING HOUSE STORE &mdash; SAN ANTONIO, TX</h3>
-      <p><a href="tel:+12107238874" class="location-phone">(210) 723-8874</a></p>
-      <p class="location-address">2506 West Ave., San Antonio, TX 78201</p>
-    </div>
 
-    <div class="map-embed reveal">
-      <iframe
-        title="Lighting House Store location map"
-        src="https://www.google.com/maps?q=2506+West+Ave,+San+Antonio,+TX+78201&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen></iframe>
+      <div class="map-embed">
+        <iframe
+          title="Lighting House Store location map"
+          src="https://www.google.com/maps?q=2506+West+Ave,+San+Antonio,+TX+78201&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
