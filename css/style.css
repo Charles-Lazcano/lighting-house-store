@@ -909,7 +909,7 @@ p { margin: 0 0 1rem; }
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 @media (min-width: 700px) {
-  .footer-grid { grid-template-columns: 1.3fr 1fr 1fr 1.2fr; }
+  .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; }
 }
 .footer-brand .logo-text { color: var(--white); }
 .footer-tagline { margin-top: 16px; max-width: 260px; color: #C9D6E6; }
@@ -924,23 +924,6 @@ p { margin: 0 0 1rem; }
 .footer-contact li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; }
 .footer-contact li svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--green-accent); margin-top: 2px; }
 .footer-contact a:hover, .footer-links a:hover { color: var(--green-accent); }
-.footer-about p { color: #C9D6E6; font-size: 0.92rem; margin-bottom: 12px; }
-.footer-github-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--white);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  word-break: break-all;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-.footer-github-link svg { width: 18px; height: 18px; flex-shrink: 0; }
-.footer-github-link:hover { background: var(--green-accent); border-color: var(--green-accent); }
 .footer-bottom { text-align: center; padding: 22px 0; font-size: 0.85rem; color: #8FA1BB; }
 
 /* =========================================================
