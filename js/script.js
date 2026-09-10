@@ -99,22 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- Email signup form (placeholder submit handler) ---------- */
-  var signupForm = document.getElementById('signupForm');
-  var signupNote = document.getElementById('signupNote');
-  if (signupForm) {
-    signupForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!signupForm.checkValidity()) {
-        signupForm.reportValidity();
-        return;
-      }
-      // TODO: wire this up to your email marketing provider (e.g. Mailchimp, Klaviyo).
-      signupNote.textContent = 'You’re subscribed! Watch your inbox for special offers.';
-      signupForm.reset();
-    });
-  }
-
   /* ---------- Scroll reveal animations ---------- */
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
