@@ -293,6 +293,7 @@ p { margin: 0 0 1rem; }
   max-width: 900px;
   margin-bottom: 22px;
 }
+.mobile-break { display: none; }
 .hero-subtitle {
   color: #DCE7F5;
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -1016,4 +1017,5 @@ p { margin: 0 0 1rem; }
   .hero-stats { gap: 26px; }
   .cta-buttons, .hero-cta { flex-direction: column; }
   .cta-buttons .btn, .hero-cta .btn { width: 100%; justify-content: center; }
+  .mobile-break { display: block; }
 }
