@@ -704,6 +704,30 @@ p { margin: 0 0 1rem; }
   .map-embed { min-height: 320px; }
   .sa-lantern { left: 2%; }
 }
+
+/* Mobile-only fix: keep the lantern clear of the heading, and stop the
+   gold-gradient "SAN ANTONIO" text from clipping when it wraps. Desktop
+   (>768px) is untouched — this block only narrows behavior further. */
+@media (max-width: 768px) {
+  #service-area { padding: 52px 20px 80px; }
+
+  #service-area > .container.text-center { padding-top: 92px; }
+  #service-area .section-title {
+    font-size: clamp(1.9rem, 8.5vw, 2.7rem);
+    padding-inline: 6px;
+    overflow-wrap: break-word;
+  }
+  #service-area .accent-gold {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  #service-area .section-lead { font-size: 1rem; }
+
+  .sa-lantern { top: 0; left: 20px; }
+  .sa-lantern svg { width: 44px; height: 98px; }
+  .sa-lantern .sa-glow { width: 46px !important; height: 46px !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sa-glow, .sa-lantern.sa-sway { animation: none; }
 }
