@@ -87,12 +87,23 @@ document.addEventListener('DOMContentLoaded', function () {
   var contactForm = document.getElementById('contactForm');
   var formNote = document.getElementById('formNote');
   if (contactForm) {
+    var contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!contactForm.checkValidity()) {
         contactForm.reportValidity();
         return;
       }
+
+      if (contactSubmitBtn) {
+        contactSubmitBtn.classList.remove('btn-lit');
+        void contactSubmitBtn.offsetWidth; // restart animation if submitted again quickly
+        contactSubmitBtn.classList.add('btn-lit');
+        contactSubmitBtn.addEventListener('animationend', function () {
+          contactSubmitBtn.classList.remove('btn-lit');
+        }, { once: true });
+      }
+
       // TODO: wire this up to your form backend / email service (e.g. Formspree, Netlify Forms, EmailJS).
       formNote.textContent = 'Thanks! Your message has been received — we’ll be in touch shortly.';
       contactForm.reset();
