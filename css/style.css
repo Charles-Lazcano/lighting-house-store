@@ -460,9 +460,9 @@ p { margin: 0 0 1rem; }
 }
 @media (min-width: 980px) {
   .category-grid { grid-template-columns: repeat(4, 1fr); }
-  /* Desktop-only: swap Post Top Lights (3rd) and Track Lights (now 12th) */
-  .category-grid .category-tile:nth-child(3) { order: 12; }
-  .category-grid .category-tile:nth-child(12) { order: 3; }
+  /* Desktop-only: swap Post Top Lights (3rd) and Track Lights (now 9th) */
+  .category-grid .category-tile:nth-child(3) { order: 9; }
+  .category-grid .category-tile:nth-child(9) { order: 3; }
 }
 .category-tile {
   position: relative;
