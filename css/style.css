@@ -448,6 +448,18 @@ p { margin: 0 0 1rem; }
 }
 @media (min-width: 980px) {
   .category-grid { grid-template-columns: repeat(4, 1fr); }
+  /* Swap Post Top Lights and Track Lights on desktop only; mobile keeps source order. */
+  #categoryGrid .category-tile:nth-child(1) { order: 1; }
+  #categoryGrid .category-tile:nth-child(2) { order: 2; }
+  #categoryGrid .category-tile:nth-child(3) { order: 5; }
+  #categoryGrid .category-tile:nth-child(4) { order: 4; }
+  #categoryGrid .category-tile:nth-child(5) { order: 3; }
+  #categoryGrid .category-tile:nth-child(6) { order: 6; }
+  #categoryGrid .category-tile:nth-child(7) { order: 7; }
+  #categoryGrid .category-tile:nth-child(8) { order: 8; }
+  #categoryGrid .category-tile:nth-child(9) { order: 9; }
+  #categoryGrid .category-tile:nth-child(10) { order: 10; }
+  #categoryGrid .category-tile:nth-child(11) { order: 11; }
 }
 .category-tile {
   position: relative;
