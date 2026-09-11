@@ -503,8 +503,8 @@ p { margin: 0 0 1rem; }
   background-position: center;
   background-color: var(--text-dark);
 }
-.tile-contain-sm { background-size: auto 82%; }
-.tile-contain-xs { background-size: auto 90%; }
+.tile-contain-sm { background-size: auto 68%; }
+.tile-contain-xs { background-size: auto 80%; }
 .tile-photo:hover::after { background: linear-gradient(180deg, rgba(30,111,217,0.10) 0%, rgba(12,45,87,0.65) 100%); }
 .tile-icon {
   position: absolute;
