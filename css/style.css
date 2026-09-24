@@ -469,6 +469,7 @@ p { margin: 0 0 1rem; }
 .category-grid .category-tile:nth-child(24) { order: 24; }
 .category-grid .category-tile:nth-child(25) { order: 25; }
 .category-grid .category-tile:nth-child(26) { order: 26; }
+.category-grid .category-tile:nth-child(27) { order: 27; }
 @media (min-width: 640px) {
   .category-grid { grid-template-columns: repeat(3, 1fr); }
 }
