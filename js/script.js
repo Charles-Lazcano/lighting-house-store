@@ -135,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
   staggerGroup('#categoryGrid', '.category-tile', 60, 360);
   staggerGroup('.feature-grid', '.feature-card', 90, 360);
   staggerGroup('.review-grid', '.review-card', 120, 360);
+  staggerGroup('.ind-featured', '.ind-card', 110, 330);
+  staggerGroup('.ind-grid', '.ind-mini', 60, 420);
   staggerGroup('.hero-stats', '.stat', 100, 300);
 
   var revealTargets = document.querySelectorAll('.reveal, .reveal-pop, .reveal-left, .reveal-right');
