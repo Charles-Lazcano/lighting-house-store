@@ -474,6 +474,7 @@ p { margin: 0 0 1rem; }
 .category-grid .category-tile:nth-child(29) { order: 29; }
 .category-grid .category-tile:nth-child(30) { order: 30; }
 .category-grid .category-tile:nth-child(31) { order: 31; }
+.category-grid .category-tile:nth-child(32) { order: 32; }
 @media (min-width: 640px) {
   .category-grid { grid-template-columns: repeat(3, 1fr); }
 }
