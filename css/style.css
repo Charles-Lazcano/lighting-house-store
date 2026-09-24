@@ -1147,5 +1147,3 @@ p { margin: 0 0 1rem; }
 @media (max-width: 600px) {
   .ind-cta .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; }
 }
-/* Two photos stacked at the top of one industry card */
-.ind-photo-stack { display: flex; flex-direction: column; gap: 3px; background: var(--white); }
