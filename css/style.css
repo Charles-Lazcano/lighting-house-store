@@ -1147,3 +1147,20 @@ p { margin: 0 0 1rem; }
 @media (max-width: 600px) {
   .ind-cta .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; }
 }
+/* Two photos that crossfade inside one .ind-photo slot */
+.ind-photo-fade { position: relative; }
+.ind-photo-fade span {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.ind-photo-fade span:last-child { animation: indPhotoFade 12s ease-in-out infinite; }
+@keyframes indPhotoFade {
+  0%, 40%   { opacity: 0; }
+  50%, 90%  { opacity: 1; }
+  100%      { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ind-photo-fade span:last-child { animation: none; opacity: 0; }
+}
